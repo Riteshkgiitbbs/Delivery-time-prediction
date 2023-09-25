@@ -4,7 +4,7 @@ from src.exception import CustomException
 import os, sys
 from src.config.configuration import *
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
-from src.components.model_trianer import ModelTrainer
+from src.components.model_trainer import ModelTrainer
 from src.components.data_ingestion import DataIngestion
 
 class Train:
@@ -21,3 +21,4 @@ class Train:
         train_arr,test_arr,_=data_transformation.initaite_data_transformation(train_data_path,test_data_path)
         model_trainer=ModelTrainer()
         model_trainer.initate_model_training(train_arr,test_arr)
+

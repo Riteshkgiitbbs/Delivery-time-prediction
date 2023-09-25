@@ -6,21 +6,20 @@ from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
 import os
 from werkzeug.utils import secure_filename
 
-from prediction.batch import batch_prediction
+from Prediction.batch import batch_prediction
 from src.logger import logging
 from src.components.data_transformation import DataTransformationConfig
 from src.config.configuration import *
 from src.pipeline.training_pipeline import Train
 
-feature_engineering_file_path = FEATURE_ENGG_OBJ_FILE_PATH
-transformer_file_path = PREPROCESING_OBJ_FILE
+feature_engineering_file_path = FEATURE_ENG_OBJ_PATH
+transformer_file_path = PREPROCESSING_OBJ_PATH
 model_file_path = MODEL_FILE_PATH
 
 UPLOAD_FOLDER = 'batch_prediction/Uploaded_CSV_FILE'
 
 
-application = Flask(__name__, template_folder='templates')
-
+application = Flask(__name__,template_folder='templates')
 
 app = application
 ALLOWED_EXTENSIONS = {'csv'}
@@ -123,4 +122,4 @@ def train():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=True, port ='5000')
+    app.run(host='0.0.0.0',debug=True, port ='8888')

@@ -2,7 +2,7 @@ import os
 import sys
 import pandas as pd
 
-from src.config.configuration import PREPROCESING_OBJ_FILE,MODEL_FILE_PATH
+from src.config.configuration import PREPROCESSING_OBJ_PATH,MODEL_FILE_PATH
 from src.exception import CustomException
 from src.logger import logging
 from src.utils import load_model
@@ -15,7 +15,7 @@ class PredictPipeline:
     
     def predict(self,features):
         try:
-            preprocessor_path = PREPROCESING_OBJ_FILE
+            preprocessor_path = PREPROCESSING_OBJ_PATH
             model_path = MODEL_FILE_PATH
             
             preprocessor = load_model(preprocessor_path)

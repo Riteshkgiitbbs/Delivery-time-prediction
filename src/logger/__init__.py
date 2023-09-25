@@ -19,3 +19,4 @@ logging.basicConfig(filename = log_file_path,
                     filemode = "w",
                     format ='[%(asctime)s] %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO )
+
